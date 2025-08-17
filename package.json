@@ -1,11 +1,12 @@
 {
+  "type": "commonjs",
   "name": "teste-participation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "jest"
-},
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wkoju84/teste-participation.git"
@@ -18,9 +19,13 @@
   },
   "homepage": "https://github.com/wkoju84/teste-participation#readme",
   "dependencies": {
+    "@prisma/client": "^6.14.0",
     "express": "^5.1.0",
     "graphql": "^16.11.0",
     "jest": "^30.0.5",
     "supertest": "^7.1.4"
+  },
+  "devDependencies": {
+    "prisma": "^6.14.0"
   }
 }
