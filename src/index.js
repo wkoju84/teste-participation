@@ -23,14 +23,33 @@ const schema = buildSchema(`
   }
 
   type Mutation {
-    adicionarParticipante(firstname: String!, lastname: String!, participation: Int!): Participante
-    removerParticipante(id: ID!): Boolean
+    adicionarParticipante(
+        firstname: String!, 
+        lastname: String!, 
+        participation: 
+            Int!): Participante
+            removerParticipante(id: ID!): Boolean
   }
 `);
+
+
 
 const rootValue = {
   participantes: () => participantes,
   adicionarParticipante: ({ firstname, lastname, participation }) => {
+    // Validação inicial
+    if (participation <= 0) {
+      throw new Error('A participação deve ser um número positivo.');
+    }
+
+    // Validação da soma total
+    const totalAtual = participantes.reduce((soma, p) => soma + p.participation, 0);
+    const novoTotal = totalAtual + participation;
+
+    if (novoTotal > 100) {
+      throw new Error('A soma total das porcentagens não pode ultrapassar 100%.');
+    }
+
     const novoParticipante = {
       id: String(participantes.length + 1),
       firstname,
