@@ -1,0 +1,26 @@
+{
+  "name": "teste-participation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "test": "jest"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wkoju84/teste-participation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wkoju84/teste-participation/issues"
+  },
+  "homepage": "https://github.com/wkoju84/teste-participation#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "graphql": "^16.11.0",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4"
+  }
+}
